@@ -80,13 +80,6 @@ p {
   box-sizing:         border-box;
 }
 
-
-追加したのは下記の部分です。
-
-
-
-scss
-
 /* debug */
 
 .debug_dump {
@@ -97,4 +90,19 @@ scss
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+}
+
+#error_explanation {
+  color:red;
+  ul {
+    color:red;
+    margin:0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  form-control {
+    color:$state-danger-text;
+  }
 }
