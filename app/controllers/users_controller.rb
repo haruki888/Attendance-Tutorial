@@ -7,7 +7,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @users }
+    end
   end
+
 
   def show
     @worked_sum = @attendances.where.not(started_at: nil).count
@@ -36,7 +42,7 @@ class UsersController < ApplicationController
       flash[:success] = "ユーザー情報を更新しました。"
       redirect_to @user
     else
-      render :edit      
+      render :edit
     end
   end
 
