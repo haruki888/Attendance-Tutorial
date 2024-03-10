@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    name {  Faker::Name.name }
+    name { Faker::Name.name }
     email { Faker::Internet.email }
     password { 'password' }
     password_confirmation { 'password' }
@@ -9,6 +9,6 @@ FactoryBot.define do
     admin { false }
     department { Faker::Job.field }
     basic_time { "2024-01-03T08:00:00.000+09:00" }
-    work_time { "2024-01-03T07:30:00.000+09:00" }
+    work_time { Time.utc(2000, 1, 1, 7, 30, 0) }  #テストエラーの原因は、FactoryBot で指定されているデフォルト値が Time 型と異なるためTime型に修正
   end
 end
