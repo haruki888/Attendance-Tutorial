@@ -38,6 +38,7 @@ group :test do
   gem 'faker' #今回追加したGem
   gem 'database_cleaner' #今回追加したGem
   gem 'rails-controller-testing' #今回追加したGem
+  gem 'timecop', '~> 0.9.2'
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
